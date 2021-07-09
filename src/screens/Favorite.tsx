@@ -1,37 +1,46 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, TextInput, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { VerbosFavoritos } from '../componentes/VerbosFavoritos'
+import { useNavigation } from '@react-navigation/native';
 
-    export const Favorite = () => {
+    export const Favorite = ({route}: any = "") => {
+
+        const verbo = route.params
+
+        const [verbos, setVerbo] = useState ([
+            { id: 1, name: 'Repetir', nivel: '1', definicion: 'Se refiere al hecho al hecho de que sin actitudes y percepciones positivas los estudiantes dificilmente podrán aprender adecuadamente' },
+            { id: 2, name: 'Registrar', nivel: '1', definicion: 'Se refiere al hecho al hecho de que sin actitudes y percepciones positivas los estudiantes dificilmente podrán aprender adecuadamente' },
+            { id: 3, name: 'Memorizar', nivel: '1', definicion: 'Se refiere al hecho al hecho de que sin actitudes y percepciones positivas los estudiantes dificilmente podrán aprender adecuadamente' },
+            { id: 4, name: 'Interpretar', nivel: '2', definicion: 'Se refiere a ayudar a los estudiantes a integrar el conocimiento nuevo con el conocimiento que ya se tiene' },
+            
+        ])
+
+        const [favoritos, setFavoritos] = useState(null)
+
+
+
+
     return (
         
         <View style={styles.contenedor}>
-
-            <View style = {styles.ContenedorArriba}>
-
-                <View>
-                    <Text style={styles.textoPrincipal}>¡Mi verbo Favorito!</Text>
-                </View>
-
+ 
+            <View style = {styles.contenedorTexto}>
+                <Text style={styles.textoPrincipal}>¡Mi verbo Favorito!</Text>
             </View>
 
-            <LinearGradient 
-            colors = {["rgba(194,231,217,1)", "transparent"]}
-            style = {styles.gradient}
-            >
-
-            </LinearGradient>
-
-            <View style = {styles.viewSecundario}>
-                <Text style={styles.textoSecundario}>Comienza a guardar tus verbos favoritos!</Text>
+            <View>
+                {   verbo ?
+                    <VerbosFavoritos verbo = {verbo.name} /> : null   
+                }
             </View>
 
             <View style = {styles.viewSecundario}>
-                <Image source = {require("../assets/img/favoritesLike.png")} style = {{height: 280, width: 300, marginLeft: 180, marginTop: 80}}/>
+                <Image source = {require("../assets/img/favoritesLike.png")} style = {{height: 220, width: 240, marginLeft: 220, marginTop: 350}}/>
             </View>
 
         </View>
-        
+         
     );
 }
 
@@ -41,6 +50,12 @@ const styles = StyleSheet.create({
         right: 0,
         height: 90,
         marginTop: -45
+    },
+    cards: {
+        height: 50,
+        width: 130, 
+        marginLeft: 20,
+        
     },
     contenedor: {
         backgroundColor: '#FFF',
@@ -56,20 +71,23 @@ const styles = StyleSheet.create({
     textoPrincipal: {
         fontSize: 35,
         color: "#000",
-        fontFamily: 'berlin-sans-fb-demi-bold',
+        fontFamily: 'averta-demo-extrabold-italic',
         marginTop: 15,
         marginLeft: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        opacity: 0.6
     },
     viewSecundario: {
-        marginTop: 50,
-        marginLeft: -15
+        marginTop: -70,
     },  
     textoSecundario: {
         fontSize: 30,
         color: "#201D2E",
-        fontFamily: 'berlin-sans-fb-demi-bold',
+        fontFamily: 'pacificitalic',
         opacity: 0.6,
         marginLeft: 48,
     },
+    contenedorTexto: {
+        marginBottom: 60
+    }
 })

@@ -1,14 +1,46 @@
-import React from 'react';
-import { View, Text, StyleSheet, TextInput, Image, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, FlatList, ScrollView, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel from 'react-native-snap-carousel';
+import { VerbosBuscar } from '../componentes/VerbosBuscar';
+import { VerbosFavoritos } from '../componentes/VerbosFavoritos';
+import { ListaVerbos } from '../Hooks/ListaVerbos';
+import { useDebouncedValue } from '../Hooks/useDebouncedValue';
 
-    export const Search = () => {
+interface Props {
+    onDebounce: ( value: string ) => void;
+}
+
+const {width: windowWidth} = Dimensions.get('window')
+
+    export const Search = ( {onDebounce}: Props ) => {
+
+        const [textValue, setTextValue] = useState('')
+
+        const [ term, setTerm] = useState('')
+
+        const navigation = useNavigation()
+
+        const { verbos } = ListaVerbos()
+
+        const [verbosFiltered, setVerbosFiltered] = useState([])
+
+        const debouncedValue = useDebouncedValue(textValue, 1500)
+
+        useEffect(() => {
+              if(textValue.length === 0){
+                  return setVerbosFiltered([])
+              }
+
+              const nuevoArray = verbos.filter(poke => true)
+
+        }, [textValue])
 
     return (
-        <View style={styles.contenedor}>
-
-            <View style = {styles.ContenedorArriba}>
+        <ScrollView style={styles.contenedor}>
 
                 <View>
                         <Text style={styles.textoPrincipal}>Busca el verbo!</Text>
@@ -16,41 +48,53 @@ import Carousel from 'react-native-snap-carousel';
 
                 </View>
 
-            </View>
-
-            <LinearGradient 
-                colors = {["rgba(194,231,217,1)", "transparent"]}
-                style = {styles.gradient}
-            >
+        
                 <View style = {styles.campoBuscar}>
+
                     <TextInput
                         placeholder = "Escribe aquí tu verbo"
                         placeholderTextColor = "gray"
                         style = {{
                             fontWeight: "bold",
                             fontSize: 18,
-                            width: 260
+                            width: 260,
                         }}
+                        value = { textValue }
+                        onChangeText = { setTextValue }
+                        
                     />
+                    
                     <Image source = {require("../assets/img/busqueda.png")} style = {{height: 20, width: 20, marginLeft: 40}}/>
                 </View>
 
-               
 
-            </LinearGradient>
+            {/* CAROUSEL */}
 
-            <View style = {{ height: 440 }}>
-                  
+            <View >
+                <View>
+                    {
+                        textValue.length > 0 ? <Carousel 
+                        data = {verbos.filter(verb => verb.name.includes( textValue ))} //Aqui va verbosFiltered
+                        renderItem= { ({item}: any) =>
+                            <VerbosBuscar verbo = {item} />
+                        }
+                        sliderWidth= {400}
+                        itemWidth = {250}
+                    /> : <Image source = {require('../assets/img/pantallabuscar.png')} style = {{width: 400, height: 300, marginTop: 100}} />
+                    }
+                    
                 </View>
+            </View>
+            
+            {/*<View>
+            <TouchableOpacity style = {styles.botonEjemplos}>
+                <Text style = {styles.textoBoton}>Ejemplos</Text>
+            </TouchableOpacity>
+            </View> */}
 
-        </View>
+        </ScrollView>
     );
 }
-
-
-
-
-
 
 
 const styles = StyleSheet.create({
@@ -58,9 +102,32 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         flex: 1,
     },
+    botonEjemplos: {
+        marginHorizontal: 110,
+        marginTop: 50,
+        height: 50,
+        width: 190,
+        backgroundColor: '#201D2E',
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    textoBoton: {
+        fontWeight: "bold",
+        color: "white",
+        fontSize: 20,
+    },
     ContenedorArriba: {
         backgroundColor: '#C2E7D9',
-        height:"20%",
+        height:"25%",
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
         paddingHorizontal: 20,
@@ -74,16 +141,17 @@ const styles = StyleSheet.create({
     textoPrincipal: {
         fontSize: 30,
         color: "#000",
-        fontFamily: 'berlin-sans-fb-demi-bold',
-        marginTop: 30,
-        marginLeft: 20
+        fontFamily: 'cooper-black',
+        marginTop: 40,
+        marginLeft: 20,
     },
     textoSecundario: {
-        fontSize: 27,
+        fontSize: 28,
         color: "#201D2E",
-        fontFamily: 'berlin-sans-fb-demi-bold',
+        fontFamily: 'cooper-black',
         opacity: 0.3,
-        marginLeft: 48,
+        marginLeft: 60,
+        marginBottom: 15
     },
     gradient: {
         left: 0,
@@ -101,6 +169,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: "#000"
+        borderColor: "#000",
+        elevation: 10
     },
 });

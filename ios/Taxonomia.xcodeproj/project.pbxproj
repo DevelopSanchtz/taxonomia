@@ -28,6 +28,13 @@
 		C363580CE4D14835BA236617 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E27739FBE4D918B71A329 /* Octicons.ttf */; };
 		1AD3F8F3E5B94E2CA09372CE /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC4AB50F883B4EDC8ED15407 /* SimpleLineIcons.ttf */; };
 		EFACD4A857C040B6B428B764 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30CD6F79FD5B45D4A3A14B14 /* Zocial.ttf */; };
+		D744D4E5A4B44266A4CFE611 /* averta-demo-extrabold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8DACBA1D8B374A6488CBC673 /* averta-demo-extrabold-italic.otf */; };
+		C906E7FCFB5D4697B2403E04 /* berlin-sans-fb-demi-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25B820224EFD4C6498A58E06 /* berlin-sans-fb-demi-bold.ttf */; };
+		BECB8A6384304D8B869D1360 /* cooper-black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C22121E50E5542D38690AD2E /* cooper-black.ttf */; };
+		FBB1AE919385428582B791BD /* Pacific_Standard_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFFD4154E9EB41C58CA00317 /* Pacific_Standard_Bold.ttf */; };
+		DCFA8FA122FD48B8B15D0E94 /* pacific.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A316F80E6B8948AB851A88C8 /* pacific.ttf */; };
+		3B0880EE66F643BFA3BCF887 /* pacificitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D821A575CA74A3296FC5711 /* pacificitalic.ttf */; };
+		FF1EBCFE6DED4A719658F203 /* ZenDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71F18F6321524352982B6088 /* ZenDots-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,13 @@
 		6D3E27739FBE4D918B71A329 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DC4AB50F883B4EDC8ED15407 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		30CD6F79FD5B45D4A3A14B14 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8DACBA1D8B374A6488CBC673 /* averta-demo-extrabold-italic.otf */ = {isa = PBXFileReference; name = "averta-demo-extrabold-italic.otf"; path = "../src/fonts/averta-demo-extrabold-italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		25B820224EFD4C6498A58E06 /* berlin-sans-fb-demi-bold.ttf */ = {isa = PBXFileReference; name = "berlin-sans-fb-demi-bold.ttf"; path = "../src/fonts/berlin-sans-fb-demi-bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C22121E50E5542D38690AD2E /* cooper-black.ttf */ = {isa = PBXFileReference; name = "cooper-black.ttf"; path = "../src/fonts/cooper-black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EFFD4154E9EB41C58CA00317 /* Pacific_Standard_Bold.ttf */ = {isa = PBXFileReference; name = "Pacific_Standard_Bold.ttf"; path = "../src/fonts/Pacific_Standard_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A316F80E6B8948AB851A88C8 /* pacific.ttf */ = {isa = PBXFileReference; name = "pacific.ttf"; path = "../src/fonts/pacific.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D821A575CA74A3296FC5711 /* pacificitalic.ttf */ = {isa = PBXFileReference; name = "pacificitalic.ttf"; path = "../src/fonts/pacificitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		71F18F6321524352982B6088 /* ZenDots-Regular.ttf */ = {isa = PBXFileReference; name = "ZenDots-Regular.ttf"; path = "../src/fonts/ZenDots-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +190,13 @@
 				6D3E27739FBE4D918B71A329 /* Octicons.ttf */,
 				DC4AB50F883B4EDC8ED15407 /* SimpleLineIcons.ttf */,
 				30CD6F79FD5B45D4A3A14B14 /* Zocial.ttf */,
+				8DACBA1D8B374A6488CBC673 /* averta-demo-extrabold-italic.otf */,
+				25B820224EFD4C6498A58E06 /* berlin-sans-fb-demi-bold.ttf */,
+				C22121E50E5542D38690AD2E /* cooper-black.ttf */,
+				EFFD4154E9EB41C58CA00317 /* Pacific_Standard_Bold.ttf */,
+				A316F80E6B8948AB851A88C8 /* pacific.ttf */,
+				6D821A575CA74A3296FC5711 /* pacificitalic.ttf */,
+				71F18F6321524352982B6088 /* ZenDots-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +308,13 @@
 				C363580CE4D14835BA236617 /* Octicons.ttf in Resources */,
 				1AD3F8F3E5B94E2CA09372CE /* SimpleLineIcons.ttf in Resources */,
 				EFACD4A857C040B6B428B764 /* Zocial.ttf in Resources */,
+				D744D4E5A4B44266A4CFE611 /* averta-demo-extrabold-italic.otf in Resources */,
+				C906E7FCFB5D4697B2403E04 /* berlin-sans-fb-demi-bold.ttf in Resources */,
+				BECB8A6384304D8B869D1360 /* cooper-black.ttf in Resources */,
+				FBB1AE919385428582B791BD /* Pacific_Standard_Bold.ttf in Resources */,
+				DCFA8FA122FD48B8B15D0E94 /* pacific.ttf in Resources */,
+				3B0880EE66F643BFA3BCF887 /* pacificitalic.ttf in Resources */,
+				FF1EBCFE6DED4A719658F203 /* ZenDots-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

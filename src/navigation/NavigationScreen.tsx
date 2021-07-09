@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Search } from '../screens/Search';
@@ -17,7 +17,7 @@ export const NavigationScreen = () => {
                 style: {
                     position: 'absolute',
                     backgroundColor: '#201D2E',
-                    borderTopStartRadius: 25,
+                    borderTopStartRadius: 25, 
                     borderTopRightRadius: 25,
                     height: 65,
                     ...styles.shadow
